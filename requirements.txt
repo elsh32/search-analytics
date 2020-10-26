@@ -1,0 +1,9 @@
+falcon
+aniso8601
+argparse
+greenlet
+gevent
+gunicorn
+passlib
+falcon-swagger-ui
+pathlib

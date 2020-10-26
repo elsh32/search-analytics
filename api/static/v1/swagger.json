@@ -1,0 +1,89 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "SearchAnalytics",
+    "contact": {}
+  },
+  "host": "localhost:8080",
+  "basePath": "/1/queries",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/popular/{DATE_PREFIX}": {
+      "get": {
+        "description": "returns a JSON object listing the top <SIZE> popular queries that have been done during a specific time range",
+        "summary": "http://localhost:8080/1/queries/popular/2015-08?size=5",
+        "tags": [
+          "Popular queries"
+        ],
+        "operationId": "http://localhost:8080/1/queries/popular/2015-08?size=5",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "DATE_PREFIX",
+            "in": "path",
+            "description": "Date time range",
+            "required": true,
+            "type": "string",
+            "format": "One of (%Y-%m-%d %H:%M:%S, %Y-%m-%d %H:%M, %Y-%m-%d %H, %Y-%m-%d, %Y-%m, %Y)"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/count/{DATE_PREFIX}": {
+      "get": {
+        "description": "returns a JSON object specifying the number of distinct queries that have been done during a specific time range",
+        "summary": "http://localhost:8080/1/queries/popular/2015-08?size=5",
+        "tags": [
+          "Number of distinct queries"
+        ],
+        "operationId": "http://localhost:8080/1/queries/popular/2015-08?size=5",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "DATE_PREFIX",
+            "in": "path",
+            "description": "Date time range",
+            "required": true,
+            "type": "string",
+            "format": "One of (%Y-%m-%d %H:%M:%S, %Y-%m-%d %H:%M, %Y-%m-%d %H, %Y-%m-%d, %Y-%m, %Y)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  }
+}
